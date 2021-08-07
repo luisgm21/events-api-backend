@@ -1,0 +1,7 @@
+POST http://localhost:3000/api/event
+Content-Type: application/json
+
+{
+   "title": "Torneo internacional de Damas",
+   "description":"Torneo entre las grandes promesas de este juego" 
+}
