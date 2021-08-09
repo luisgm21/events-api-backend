@@ -1,1 +1,4 @@
 DELETE http://localhost:3000/api/event/1
+
+###
+DELETE http://localhost:3000/api/event/61101b7669ebee438c1a12be

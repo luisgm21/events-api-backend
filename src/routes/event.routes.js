@@ -1,48 +1,75 @@
 const express = require('express')
 const router = express.Router()
-let Eventos = require('../sample')
+const Evento = require('../models/event')
 
-router.get('/', (req, res) => {
-  res.json(Eventos)
+router.get('/', (req, res, next) => {
+  Evento.find()
+    .then(eventos => {
+      res.json(eventos)
+    })
+    .catch(err => next(err))
 })
 
+router.get('/:id', (req, res, next) => {
+  const { id } = req.params
+  Evento.findById(id)
+    .then((evento) => {
+      if (evento) {
+        return res.json(evento)
+      } else {
+        res.status(404).end()
+      }
+    })
+    .catch(err => {
+      next(err)
+    })
+})
 router.post('/', (req, res) => {
-  const { title, description } = req.body
-  if (title && description) {
-    console.log()
-    if (String(title).length === 0 || String(description).length === 0) {
-      res.status(400).end()
-    }
-    const ids = Eventos.map(event => Number(event.id))
-    const max = Math.max(...ids)
-    const newEvent = {
-      id: max + 1,
+  const { title, description, place, important } = req.body
+  const evento =
+  new Evento(
+    {
       title,
-      description
-    }
-    Eventos = [...Eventos, newEvent]
-    res.json(newEvent).status(201).end()
-  } else {
-    res.status(400).end()
-  }
+      description,
+      date: new Date(),
+      place,
+      important
+    })
+  evento.save().then(savedEvent => {
+    res.json({ mensaje: savedEvent })
+  })
 })
 
-router.get('/:id', (req, res) => {
+router.put('/:id', (req, res, next) => {
   const { id } = req.params
-  const event = Eventos.find(event => event.id === id)
-
-  if (event) {
-    res.json(event).status(200).end()
-  } else {
-    console.error('Error: id erronea o no existe')
-    res.json('El evento que esta buscando no existe').end()
+  const { title, description, place, important } = req.body
+  const newEvent = {
+    title,
+    description,
+    date: new Date(),
+    place,
+    important
   }
+
+  Evento.findByIdAndUpdate(id, newEvent)
+    .then(
+      result => {
+        res.json(result).end()
+      }
+    )
+    .catch(err => next(err))
+
+  // await Eventos.findByIdAndUpdate(id, newEvent)
+  // res.json({ mensaje: 'Tarea actualizada', title, description })
 })
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', (req, res, next) => {
   const { id } = req.params
-  Eventos = Eventos.filter(event => event.id !== id)
-  res.status(204).end()
+  Evento.findByIdAndDelete(id)
+    .then(() => {
+      res.status(204).end()
+    })
+    .catch(err => next(err))
 })
 
 module.exports = router

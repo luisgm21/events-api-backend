@@ -3,5 +3,45 @@ Content-Type: application/json
 
 {
    "title": "Torneo internacional de Damas",
-   "description":"Torneo entre las grandes promesas de este juego" 
+   "description":"Torneo entre las grandes promesas de este juego",
+    "place":{
+      "codlocalidad": 1,
+      "nombrelocalidad": "Poman",
+      "Direccion": "plaza 2 septiembre"
+    },
+   "important": true,
+   "urlimage":"http://unsitioconimagenes/id"
+}
+
+###
+POST http://localhost:3000/api/event
+Content-Type: application/json
+
+{
+   "title": "Torneo internacional de Ajedrez",
+   "description":"Torneo entre las grandes promesas de este juego",
+    "place":{
+      "codlocalidad": 2,
+      "nombrelocalidad": "Catamarca",
+      "Direccion": "plaza 25 Agosto"
+    },
+   "important": true,
+   "urlimage":"http://unsitioconimagenes/id"
+}
+
+###
+
+POST http://localhost:3000/api/event
+Content-Type: application/json
+
+{
+   "title": "esto es un test",
+   "description":"testeo de ciertas funcionalidades",
+    "place":{
+      "codlocalidad": 2,
+      "nombrelocalidad": "Catamarca",
+      "Direccion": "plaza 25 Agosto"
+    },
+   "important": true,
+   "urlimage":"http://unsitioconimagenes/id"
 }

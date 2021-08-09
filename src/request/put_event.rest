@@ -1,0 +1,29 @@
+PUT http://localhost:3000/api/event/610fffc3f7819029043b006b
+Content-Type: application/json
+
+{
+   "title": "Torneo internacional de Ajedrez",
+   "description":"Torneo entre las grandes promesas de este juego",
+    "place":{
+      "codlocalidad": 2,
+      "nombrelocalidad": "Catamarca",
+      "Direccion": "plaza 25 Mayo"
+    },
+   "important": true
+}
+
+###
+PUT http://localhost:3000/api/event/1
+Content-Type: application/json
+
+{
+   "title": "Torneo internacional de Ajedrez",
+   "description":"Torneo entre las grandes promesas de este juego",
+    "place":{
+      "codlocalidad": 2,
+      "nombrelocalidad": "Catamarca",
+      "Direccion": "plaza 25 Mayo"
+    },
+   "important": true,
+   "urlimage":"http://unsitioconimagenes/id"
+}
