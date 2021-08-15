@@ -1,9 +1,9 @@
-PUT http://localhost:3000/api/event/610fffc3f7819029043b006b
+PUT http://localhost:3000/api/event/611083655591763d4c19c8ad
 Content-Type: application/json
 
 {
-   "title": "Torneo internacional de Ajedrez",
-   "description":"Torneo entre las grandes promesas de este juego",
+   "title": "Testeo de Actualizacion2",
+   "description":"Es para observar la actualizacion",
     "place":{
       "codlocalidad": 2,
       "nombrelocalidad": "Catamarca",

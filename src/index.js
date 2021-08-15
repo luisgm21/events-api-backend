@@ -37,8 +37,8 @@ app.use(Sentry.Handlers.requestHandler())
 app.use(Sentry.Handlers.tracingHandler())
 
 // Routes
-app.use('/api/event', require('./routes/event.routes'))
-app.use('/api/user', require('./routes/user.routes'))
+app.use('/api/event', require('./controllers/event'))
+app.use('/api/user', require('./controllers/user'))
 // Static files
 app.use(express.static(path.join(__dirname, 'public')))
 

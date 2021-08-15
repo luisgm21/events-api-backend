@@ -10,7 +10,8 @@ Content-Type: application/json
       "Direccion": "plaza 2 septiembre"
     },
    "important": true,
-   "urlimage":"http://unsitioconimagenes/id"
+   "urlimage":"http://unsitioconimagenes/id",
+   "user": "61191bfd1a1e5a3fc047b370"
 }
 
 ###
@@ -26,7 +27,8 @@ Content-Type: application/json
       "Direccion": "plaza 25 Agosto"
     },
    "important": true,
-   "urlimage":"http://unsitioconimagenes/id"
+   "urlimage":"http://unsitioconimagenes/id",
+   "user": "61191bfd1a1e5a3fc047b370"
 }
 
 ###
@@ -43,5 +45,20 @@ Content-Type: application/json
       "Direccion": "plaza 25 Agosto"
     },
    "important": true,
+   "urlimage":"http://unsitioconimagenes/id"
+}
+
+###
+POST http://localhost:3000/api/event
+Content-Type: application/json
+
+{
+   "title": "Torneo internacional de Damas",
+   "description":"Torneo entre las grandes promesas de este juego",
+    "place":{
+      "codlocalidad": 1,
+      "nombrelocalidad": "Poman",
+      "Direccion": "plaza 2 septiembre"
+    },
    "urlimage":"http://unsitioconimagenes/id"
 }

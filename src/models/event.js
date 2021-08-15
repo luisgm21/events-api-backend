@@ -19,7 +19,10 @@ const eventSchema = new Schema({
     required: true
   },
   place: lugar,
-  important: Boolean,
+  important: {
+    type: Boolean,
+    default: false
+  },
   urlimg: String
 })
 
