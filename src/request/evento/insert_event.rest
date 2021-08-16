@@ -1,5 +1,6 @@
 POST http://localhost:3000/api/event
 Content-Type: application/json
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTHVpc01pZ3VlbCIsInVzZXJuYW1lIjoiVXNlckx1aXMiLCJpZCI6IjYxMTliY2NkZjg4ZTRkM2RlODdiMmU0MyIsImlhdCI6MTYyOTA4MDE0NiwiZXhwIjoxNjI5MDgwNDQ2fQ.V2uUw0kdrn16xA1Qpw93ERqbmV8Ama5z0P0rOb531vo
 
 {
    "title": "Torneo internacional de Damas",
@@ -10,8 +11,7 @@ Content-Type: application/json
       "Direccion": "plaza 2 septiembre"
     },
    "important": true,
-   "urlimage":"http://unsitioconimagenes/id",
-   "user": "61191bfd1a1e5a3fc047b370"
+   "urlimage":"http://unsitioconimagenes/id"
 }
 
 ###
@@ -27,8 +27,7 @@ Content-Type: application/json
       "Direccion": "plaza 25 Agosto"
     },
    "important": true,
-   "urlimage":"http://unsitioconimagenes/id",
-   "user": "61191bfd1a1e5a3fc047b370"
+   "urlimage":"http://unsitioconimagenes/id"
 }
 
 ###
@@ -45,8 +44,7 @@ Content-Type: application/json
       "Direccion": "plaza 25 Agosto"
     },
    "important": true,
-   "urlimage":"http://unsitioconimagenes/id",
-   "user": "61199960dacc0d3b58ca9d9c"
+   "urlimage":"http://unsitioconimagenes/id"
 }
 
 ###

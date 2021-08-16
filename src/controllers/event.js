@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const Evento = require('../models/event')
 const User = require('../models/user')
+const jwt = require('jsonwebtoken')
 
 router.get('/', async (req, res, next) => {
   try {
@@ -34,11 +35,24 @@ router.post('/', async (req, res, next) => {
       title,
       description,
       place,
-      important,
-      user
+      important
     } = req.body
 
-    const userOwnerEvent = await User.findById(user)
+    const authorization = req.get('authorization')
+
+    let token = null
+
+    if (authorization && authorization.toLowerCase().startsWith('bearer ')) {
+      token = authorization.substring(7)
+    }
+
+    const decodedToken = jwt.verify(token, process.env.SECRET)
+    console.log()
+    if (!token || !decodedToken.id) {
+      return res.status(401).json({ error: 'token missing or invalid' })
+    }
+
+    const userOwnerEvent = await User.findById(decodedToken.id)
 
     const evento =
   new Evento(
