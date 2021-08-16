@@ -4,6 +4,14 @@ const Evento = require('../models/event')
 const User = require('../models/user')
 const jwt = require('jsonwebtoken')
 
+const getTokenFrom = request => {
+  const authorization = request.get('authorization')
+  if (authorization && authorization.toLowerCase().startsWith('bearer ')) {
+    return authorization.substring(7)
+  }
+  return null
+}
+
 router.get('/', async (req, res, next) => {
   try {
     const eventos = await Evento.find({}).populate('user', {
@@ -38,16 +46,8 @@ router.post('/', async (req, res, next) => {
       important
     } = req.body
 
-    const authorization = req.get('authorization')
-
-    let token = null
-
-    if (authorization && authorization.toLowerCase().startsWith('bearer ')) {
-      token = authorization.substring(7)
-    }
-
+    const token = getTokenFrom(req)
     const decodedToken = jwt.verify(token, process.env.SECRET)
-    console.log()
     if (!token || !decodedToken.id) {
       return res.status(401).json({ error: 'token missing or invalid' })
     }
@@ -89,6 +89,13 @@ router.put('/:id', async (req, res, next) => {
       important,
       user
     }
+
+    const token = getTokenFrom(req)
+    const decodedToken = jwt.verify(token, process.env.SECRET)
+    if (!token || !decodedToken.id) {
+      return res.status(401).json({ error: 'token missing or invalid' })
+    }
+
     const evento = await Evento.findByIdAndUpdate(id, newEvent, { new: true })
     res.json(evento).end()
   } catch (error) {
@@ -99,6 +106,13 @@ router.put('/:id', async (req, res, next) => {
 router.delete('/:id', async (req, res, next) => {
   try {
     const { id } = req.params
+
+    const token = getTokenFrom(req)
+    const decodedToken = jwt.verify(token, process.env.SECRET)
+    if (!token || !decodedToken.id) {
+      return res.status(401).json({ error: 'token missing or invalid' })
+    }
+
     await Evento.findByIdAndDelete(id)
     res.status(204).end()
   } catch (error) {

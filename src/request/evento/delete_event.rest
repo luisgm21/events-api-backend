@@ -1,4 +1,5 @@
 DELETE http://localhost:3000/api/event/1
 
 ###
-DELETE http://localhost:3000/api/event/61101b7669ebee438c1a12be
+DELETE http://localhost:3000/api/event/6119cca035c0514218b9247b
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTHVpc01pZ3VlbCIsInVzZXJuYW1lIjoiVXNlckx1aXMiLCJpZCI6IjYxMTliY2NkZjg4ZTRkM2RlODdiMmU0MyIsImlhdCI6MTYyOTA4MDgwMywiZXhwIjoxNjI5MDgxMTAzfQ.-0xRK3K1TluRIHzWt_PLxqydYcOqqh0qLupYV4qnShw

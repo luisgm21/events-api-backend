@@ -1,9 +1,9 @@
 POST http://localhost:3000/api/event
 Content-Type: application/json
-Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTHVpc01pZ3VlbCIsInVzZXJuYW1lIjoiVXNlckx1aXMiLCJpZCI6IjYxMTliY2NkZjg4ZTRkM2RlODdiMmU0MyIsImlhdCI6MTYyOTA4MDE0NiwiZXhwIjoxNjI5MDgwNDQ2fQ.V2uUw0kdrn16xA1Qpw93ERqbmV8Ama5z0P0rOb531vo
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTHVpc01pZ3VlbCIsInVzZXJuYW1lIjoiVXNlckx1aXMiLCJpZCI6IjYxMTliY2NkZjg4ZTRkM2RlODdiMmU0MyIsImlhdCI6MTYyOTA4MDYxMiwiZXhwIjoxNjI5MDgwOTEyfQ.LUQVPK1YFrplv1yBP_eV8TrrzankH2PDjCDRqixJp1Y
 
 {
-   "title": "Torneo internacional de Damas",
+   "title": "Torneo internacional de Damas Dominicano",
    "description":"Torneo entre las grandes promesas de este juego",
     "place":{
       "codlocalidad": 1,
@@ -17,6 +17,7 @@ Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTHVpc01pZ3
 ###
 POST http://localhost:3000/api/event
 Content-Type: application/json
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTHVpc01pZ3VlbCIsInVzZXJuYW1lIjoiVXNlckx1aXMiLCJpZCI6IjYxMTliY2NkZjg4ZTRkM2RlODdiMmU0MyIsImlhdCI6MTYyOTA4MDgwMywiZXhwIjoxNjI5MDgxMTAzfQ.-0xRK3K1TluRIHzWt_PLxqydYcOqqh0qLupYV4qnShw
 
 {
    "title": "Torneo internacional de Ajedrez",
@@ -34,6 +35,7 @@ Content-Type: application/json
 
 POST http://localhost:3000/api/event
 Content-Type: application/json
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTHVpc01pZ3VlbCIsInVzZXJuYW1lIjoiVXNlckx1aXMiLCJpZCI6IjYxMTliY2NkZjg4ZTRkM2RlODdiMmU0MyIsImlhdCI6MTYyOTA4MDgwMywiZXhwIjoxNjI5MDgxMTAzfQ.-0xRK3K1TluRIHzWt_PLxqydYcOqqh0qLupYV4qnShw
 
 {
    "title": "esto es un test",
@@ -50,6 +52,7 @@ Content-Type: application/json
 ###
 POST http://localhost:3000/api/event
 Content-Type: application/json
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTHVpc01pZ3VlbCIsInVzZXJuYW1lIjoiVXNlckx1aXMiLCJpZCI6IjYxMTliY2NkZjg4ZTRkM2RlODdiMmU0MyIsImlhdCI6MTYyOTA4MDgwMywiZXhwIjoxNjI5MDgxMTAzfQ.-0xRK3K1TluRIHzWt_PLxqydYcOqqh0qLupYV4qnShw
 
 {
    "title": "Torneo internacional de Damas",
