@@ -45,7 +45,8 @@ Content-Type: application/json
       "Direccion": "plaza 25 Agosto"
     },
    "important": true,
-   "urlimage":"http://unsitioconimagenes/id"
+   "urlimage":"http://unsitioconimagenes/id",
+   "user": "61199960dacc0d3b58ca9d9c"
 }
 
 ###

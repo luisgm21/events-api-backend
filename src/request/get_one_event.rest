@@ -1,4 +1,0 @@
-GET http://localhost:3000/api/event/610fffc3f7819029043b006b
-
-###
-GET http://localhost:3000/api/event/9

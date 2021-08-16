@@ -14,6 +14,26 @@ router.get('/', async (req, res, next) => {
   res.json(users)
 })
 
+router.get('/:id', async (req, res, next) => {
+  try {
+    const { id } = req.params
+    const user = await User.findById(id).populate('eventos', {
+      title: 1,
+      description: 1,
+      date: 1,
+      place: 1,
+      important: 1
+    })
+    if (user) {
+      return res.json(user)
+    } else {
+      res.status(404).end()
+    }
+  } catch (error) {
+    next(error)
+  }
+})
+
 router.post('/', async (req, res) => {
   const { body } = req
   const { username, name, password, eventos = [] } = body
@@ -32,12 +52,10 @@ router.post('/', async (req, res) => {
 router.put('/:id', async (req, res, next) => {
   try {
     const { id } = req.params
-    const { username, name, passwordHash, eventos } = req.body
+    const { username, name } = req.body
     const newUser = {
       username,
-      name,
-      passwordHash,
-      eventos
+      name
     }
     const user = await User.findByIdAndUpdate(id, newUser, { new: true })
     res.json(user).end()
